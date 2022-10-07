@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -l
 
-. /usr/share/miniconda3/envs/conda-eda/bin/activate
+env
+which flow.tcl
+find $CONDA_PREFIX
+conda activate conda-eda
 "$@"
