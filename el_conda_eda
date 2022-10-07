@@ -3,4 +3,5 @@ set +ex
 
 conda activate conda-eda
 env
+find $CONDA_PREFIX
 "$@"
