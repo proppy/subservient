@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-conda activate conda-eda
+. /usr/share/miniconda3/envs/conda-eda/bin/activate
 "$@"
