@@ -5,9 +5,6 @@ on:
 jobs:
   build-openlane-sky130:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
     env:
       REPO: subservient
       VLNV: subservient
@@ -20,20 +17,16 @@ jobs:
         with:
           installer-url: https://github.com/proppy/conda-eda/releases/download/v0.0-1358-g4ea08b3-40-g8227f29-1-g1007cd2-1-ga1cffe6/openlane-sky130a-0-Linux-x86_64.sh
           activate-environment: conda-eda
-      - name: env
-        run: |
-          echo "EDALIZE_LAUNCHER=$(realpath subservient/el_conda_eda)" >> $GITHUB_ENV
       - name: build with fusesoc
+        shell: bash -l {0}
         run: |
+          env
           pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
           fusesoc run --target=sky130 $VLNV
   build-openlane-gf180:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
     env:
       REPO: subservient
       VLNV: subservient
@@ -46,11 +39,10 @@ jobs:
         with:
           installer-url: https://github.com/proppy/conda-eda/releases/download/v0.0-1358-g4ea08b3-40-g8227f29-1-g1007cd2-1-ga1cffe6/openlane-gf180mcuc-0-Linux-x86_64.sh
           activate-environment: conda-eda
-      - name: env
-        run: |
-          echo "EDALIZE_LAUNCHER=$(realpath subservient/el_conda_eda)" >> $GITHUB_ENV
       - name: build with fusesoc
+        shell: bash -l {0}
         run: |
+          env
           pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
