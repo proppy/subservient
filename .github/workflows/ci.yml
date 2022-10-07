@@ -22,7 +22,7 @@ jobs:
           activate-environment: silicon-env
       - name: build with fusesoc
         run: |
-          pip3 install fuseso
+          pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
           fusesoc run --target=sky130 $VLNV
@@ -45,7 +45,7 @@ jobs:
           activate-environment: silicon-env
       - name: build with fusesoc
         run: |
-          pip3 install fuseso
+          pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
           fusesoc run --target=gf180 $VLNV
