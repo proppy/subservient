@@ -11,7 +11,7 @@ jobs:
     env:
       REPO : subservient
       VLNV : subservient
-      EDALIZE_LAUNCHER: subservient/el_conda_eda
+      EDALIZE_LAUNCHER: /home/runner/work/subservient/subservient/el_conda_eda
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
     env:
       REPO : subservient
       VLNV : subservient
-      EDALIZE_LAUNCHER: subservient/el_conda_eda
+      EDALIZE_LAUNCHER: /home/runner/work/subservient/subservient/el_conda_eda
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
