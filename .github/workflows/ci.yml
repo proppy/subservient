@@ -1,5 +1,7 @@
 name: build-openlane
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 jobs:
   build-openlane-sky130:
     runs-on: ubuntu-latest
