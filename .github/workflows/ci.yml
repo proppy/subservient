@@ -25,6 +25,7 @@ jobs:
           pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
+          conda activate silicon-env
           fusesoc run --target=sky130 $VLNV
   build-openlane-gf180:
     runs-on: ubuntu-latest
@@ -48,4 +49,5 @@ jobs:
           pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
           fusesoc library add $REPO $GITHUB_WORKSPACE/$REPO
+          conda activate silicon-env
           fusesoc run --target=gf180 $VLNV
