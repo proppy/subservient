@@ -8,7 +8,6 @@ jobs:
     env:
       REPO: subservient
       VLNV: subservient
-      EDALIZE_LAUNCHER: /home/runner/work/subservient/subservient/subservient/el_conda_eda
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -17,7 +16,8 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           installer-url: https://github.com/proppy/conda-eda/releases/download/v0.0-1403-ga3008a5/openlane-sky130a-0-Linux-x86_64.sh
-          activate-environment: conda-eda
+          auto-activate-base: true
+          activate-environment: ""    
       - name: build with fusesoc
         shell: bash -l {0}
         run: |
@@ -30,7 +30,6 @@ jobs:
     env:
       REPO: subservient
       VLNV: subservient
-      EDALIZE_LAUNCHER: /home/runner/work/subservient/subservient/subservient/el_conda_eda
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -39,7 +38,8 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           installer-url: https://github.com/proppy/conda-eda/releases/download/v0.0-1403-ga3008a5/openlane-gf180mcuc-0-Linux-x86_64.sh
-          activate-environment: conda-eda
+          auto-activate-base: true
+          activate-environment: ""    
       - name: build with fusesoc
         shell: bash -l {0}
         run: |
