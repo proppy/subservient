@@ -1,7 +1,7 @@
 #!/usr/bin/bash -l
-set +ex
+set -ex
 
 conda activate conda-eda
 env
-find $CONDA_PREFIX
+find /usr/share/miniconda3
 "$@"
