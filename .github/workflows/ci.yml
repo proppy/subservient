@@ -9,8 +9,8 @@ jobs:
       run:
         shell: bash -l {0}
     env:
-      REPO : subservient
-      VLNV : subservient
+      REPO: subservient
+      VLNV: subservient
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
       - name: env
         run: |
           echo "EDALIZE_LAUNCHER=$(realpath subservient/el_conda_eda)" >> $GITHUB_ENV
-       - name: build with fusesoc
+      - name: build with fusesoc
         run: |
           pip3 install fusesoc
           fusesoc library add serv https://github.com/olofk/serv
@@ -35,8 +35,8 @@ jobs:
       run:
         shell: bash -l {0}
     env:
-      REPO : subservient
-      VLNV : subservient
+      REPO: subservient
+      VLNV: subservient
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
